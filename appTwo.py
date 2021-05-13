@@ -248,8 +248,14 @@ try:
 
     @app.route('/background_process')
     def background_process():
+        ledRedSts = GPIO.input(ledRed)
+        ledBluSts = GPIO.input(ledBlu)
+        ledGrnSts = GPIO.input(ledGrn)
+        fanSts = GPIO.input(fan)
+
         Temp = '{0:0.2f} *celsius'.format(get_temp())
         localtime = time.asctime(time.localtime(time.time()))
+
         data = jsonify(
             title='Welcome to NOTZ Secret Server',
             ledRed=ledRedSts,

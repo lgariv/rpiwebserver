@@ -72,6 +72,9 @@
 				function(data) {
                     document.getElementById("time-element").innerHTML = ('the Date and time on the server is: ' + data.time)
 					document.getElementById("temp-element").innerHTML = ('Room Temperature of Servers is: ' + data.T)
+                    document.getElementById("red-led").innerHTML = ('RED LED ==> ' + data.ledRed)
+					document.getElementById("green-led").innerHTML = ('GREEN LED ==> ' + data.ledGrn)
+					document.getElementById("blue-led").innerHTML = ('BLUE LED ==> ' + data.ledBlu)
 
                     if (data.hacked === 1) {
                         document.body.style.backgroundColor = "white"
@@ -113,16 +116,16 @@
     </div>
 
     <div id="standard">
-        <h1> {{title}} </h1>
-        <h2 id="time-element"> the Date and time on the server is: {{time}} </h2>
-        <h2 id="temp-element"> Room Temperature of Servers is: {{T}} </h2>
+        <h1>{{title}}</h1>
+        <h2 id="time-element">the Date and time on the server is: {{time}}</h2>
+        <h2 id="temp-element">Room Temperature of Servers is: {{T}}</h2>
 
-        <h1> actuators </h1>
-        <h2> status </h2>
-        <h3 style="color:#FF0000" ;> RED LED ==> {{ledRed}}</h3>
-        <h3 style="color:#00FF00" ;> GREEN LED ==> {{ledGrn}}</h3>
-        <h3 style="color:#0000FF" ;> BLUE LED ==> {{ledBlu}}</h3>
-        <h3> VENTILATOR ==> {{ventilator}}</h3>
+        <h1>actuators</h1>
+        <h2>status</h2>
+        <h3 style="color:#FF0000" id="red-led">RED LED ==> {{ledRed}}</h3>
+        <h3 style="color:#00FF00" id="green-led">GREEN LED ==> {{ledGrn}}</h3>
+        <h3 style="color:#0000FF" id="blue-led">BLUE LED ==> {{ledBlu}}</h3>
+        <h3>VENTILATOR ==> {{ventilator}}</h3>
 
         <br>
         <h2> commands</h2>
