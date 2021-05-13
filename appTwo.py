@@ -244,7 +244,7 @@ try:
         }
         return render_template('indexTwo.html', **templateData)
 
-    socketio = SocketIO(app)
+    # socketio = SocketIO(app)
 
     @app.route('/background_process')
     def background_process():
@@ -284,8 +284,11 @@ try:
     #     return data
 
     if __name__ == "__main__":
-        # app.run(host='0.0.0.0', port=80, debug=True, use_reloader=False)
-        socketio.run(app, host='0.0.0.0', port=80, debug=True)
+        app.run(host='192.168.1.161',
+                port=8080,
+                debug=False,
+                use_reloader=False)
+        # socketio.run(app, host='0.0.0.0', port=80, debug=True)
 finally:
     f.close()
     GPIO.cleanup()
